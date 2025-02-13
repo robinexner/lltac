@@ -24,7 +24,6 @@ Load the `lltac.js` script (make sure to import as module) and the css file `llt
 
    ```html
    <script src="/lltac/lltac.js" type="module"></script>
-   <link rel="stylesheet" href="/lltac/lltac.css" />
    ```
 
 ---
@@ -39,6 +38,8 @@ Example:
 <div data-cookie="jar1">Find this cookie jar!</div>
 <div data-cookie="jar2">Another cookie jar is hidden here!</div>
 ```
+
+Update the cookieList Arrays in lltac.js to include the names your cookies.
 
 ## Acknowledgments  
 
