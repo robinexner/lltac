@@ -168,7 +168,8 @@ const cookiejarLocales = {
             title: "Functional",
             description: "Functional cookies allow me to track your progress. All the cookie jars you've found will be stored as functional cookies.",
             cookieList: [
-                { name: "exampleCookiejar", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" }
+                { name: "jar1", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
+                { name: "jar2", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" }
             ]
         }]
     },
@@ -324,7 +325,8 @@ const cookiejarLocales = {
             title: "Funktional",
             description: "Funktionale Cookies erlauiben es mir, Deinen Forschritt zu verfolgen. Alle Deine gefundenen Kekse werden als funktionale Cookies gespeichert.",
             cookieList: [
-                { name: "exampleCookiejar", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" }
+                { name: "jar1", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
+                { name: "jar2", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" }
             ]
         }]
     }
