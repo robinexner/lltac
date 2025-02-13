@@ -168,12 +168,7 @@ const cookiejarLocales = {
             title: "Functional",
             description: "Functional cookies allow me to track your progress. All the cookie jars you've found will be stored as functional cookies.",
             cookieList: [
-                { name: "burgercookie", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
-                { name: "wintercookie", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
-                { name: "fundocookie", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
-                { name: "hiremecookie", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
-                { name: "messagecookie", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
-                { name: "footercookie", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" },
+                { name: "exampleCookiejar", description: "Stores that a cookie jar has been found.", expires: "365 Days", provider: "lltac" }
             ]
         }]
     },
@@ -329,12 +324,7 @@ const cookiejarLocales = {
             title: "Funktional",
             description: "Funktionale Cookies erlauiben es mir, Deinen Forschritt zu verfolgen. Alle Deine gefundenen Kekse werden als funktionale Cookies gespeichert.",
             cookieList: [
-                { name: "burgercookie", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
-                { name: "wintercookie", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
-                { name: "fundocookie", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
-                { name: "hiremecookie", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
-                { name: "messagecookie", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
-                { name: "footercookie", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" },
+                { name: "exampleCookiejar", description: "Speichert, dass ein Keksglas gefunden wurde.", expires: "365 Tage", provider: "lltac" }
             ]
         }]
     }
@@ -405,6 +395,7 @@ async function loadSvgImage(uri) {
             });
     });
 }
+
 /**
  * 
  * @returns {string} - cookiesFoundStatusText with $cookiesFound $cookiesTotal replaced with according values
@@ -415,6 +406,10 @@ function getCookiesFoundText() {
     return fundoCookies.locs.t('cookiesFoundStatusText', { cookiesFound, cookiesTotal });
 }
 
+/**
+ *
+ * @returns {Object[]} - Array of all cookiejars that have been claimed. If no cookiejars have been claimed, it will try to get the claimed cookiejars from the DOM.
+ */
 function getClaimedCookies() {
     let cookiesFound = fundoCookies.locs.translations.cookieCategories[1].cookieList.filter((cookie) => {
         return fundoCookies.getCookieValue(cookie.name);
@@ -434,8 +429,11 @@ function updateCookiesFoundTexts() {
     });
 }
 
-
+/**
+ * Array of all cookies that failed to be set
+ */
 let cookiejar = [];
+
 /**
  * Attempts to set cookies for all items in the cookiejar array.
  * Removes the item from the cookiejar array if the cookie is successfully set.
