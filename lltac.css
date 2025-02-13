@@ -1,0 +1,55 @@
+/*
+ * This file is part of the lltac project.
+ * Copyright (c) 2025 Robin Exner (https://robinexner.de)
+ * GitHub: https://github.com/robinexner/lltac
+ * This software is licensed under the MIT License.
+ * See the LICENSE file for more information.
+ */
+
+.notification .notification__buttons {
+    margin-left: -.4em;
+}
+
+.cookie-notification {
+    background-image: url('img/cookiecorner.svg');
+    background-repeat: no-repeat;
+    background-position: bottom -3em left -3em;
+    background-size: 7em;
+}
+
+.cookiejar {
+    position: absolute;
+    top: -48px;
+    height: 64px;
+    width: 74px;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.cookiejar:not([data-cookie-taken]) {}
+
+.cookiejar[data-cookie-taken] {}
+
+.cookiejar .cookiejar-open {}
+
+.cookiejar .cookiejar-closed {}
+
+.cookiejar:not([data-cookie-taken]) .cookiejar-open {
+    visibility: hidden;
+}
+
+.cookiejar:not([data-cookie-taken]) .cookiejar-closed {
+    visibility: visible;
+}
+
+.cookiejar[data-cookie-taken] .cookiejar-open {
+    visibility: visible;
+}
+
+.cookiejar[data-cookie-taken] .cookiejar-closed {
+    visibility: hidden;
+}
+
+[data-white-cookiejar] .cookiejar {
+    color: var(--white);
+}
